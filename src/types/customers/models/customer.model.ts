@@ -22,3 +22,13 @@ export interface ICustomer extends IBase {
 	phoneVerified: boolean;
     hasCreatedStore: boolean;
 }
+
+export interface IMerchant extends IBase {
+	status: CustomerAccountStatus;
+    email: string;
+    fullName: string;
+    phoneNumber: string;
+    passwords?: Array<IPassword>;
+	phoneVerified: boolean;
+    hasCreatedStore: boolean;
+}

@@ -1,3 +1,23 @@
+var __defProp = Object.defineProperty;
+var __defProps = Object.defineProperties;
+var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
+var __getOwnPropSymbols = Object.getOwnPropertySymbols;
+var __hasOwnProp = Object.prototype.hasOwnProperty;
+var __propIsEnum = Object.prototype.propertyIsEnumerable;
+var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var __spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (__hasOwnProp.call(b, prop))
+      __defNormalProp(a, prop, b[prop]);
+  if (__getOwnPropSymbols)
+    for (var prop of __getOwnPropSymbols(b)) {
+      if (__propIsEnum.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
+
 // src/types/communications/endpoint-payloads/verify-otp.payloads.ts
 import { HttpStatusCode } from "axios";
 
@@ -247,12 +267,19 @@ var CreateStoreEndpoint = {
 // src/types/stores/endpoint-payloads/product.payloads.ts
 import { HttpStatusCode as HttpStatusCode7 } from "axios";
 var CreateProductErrors = {
-  default: {
+  noSuchStoreForCustomer: {
     statusCode: HttpStatusCode7.BadRequest,
-    code: "DEFAULT_CREATE_PRODUCT_ERROR",
-    message: `This is an example error`
+    code: "NO_SUCH_STORE_FOR_CUSTOMER",
+    message: "This store does not exist for this customer"
   }
 };
+var UpdateProductErrors = __spreadProps(__spreadValues({}, CreateProductErrors), {
+  noSuchProductInStore: {
+    statusCode: HttpStatusCode7.BadRequest,
+    code: "NO_SUCH_PRODUCT_IN_STORE",
+    message: "This product does not exist in this store"
+  }
+});
 var createProductEndpoint = {
   path: "/products",
   fullPath: "/products",
@@ -347,6 +374,7 @@ export {
   ResetPasswordErrors,
   SuggestStoreSubdomainsEndpoint,
   UpdateProductEndpoint,
+  UpdateProductErrors,
   UpdateStoreEndpoint,
   UpdateStoreErrors,
   VerifyOtpEndpoint,
