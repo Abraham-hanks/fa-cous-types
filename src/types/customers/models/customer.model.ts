@@ -13,6 +13,13 @@ export enum CustomerAccountStatus {
     Active = 'active'
 }
 
+export enum MerchantAccountStatus {
+    EmailReserved = 'email-reserved',
+    Inactive = 'inactive',
+    Deactivated = 'deactivated',
+    Active = 'active'
+}
+
 export interface ICustomer extends IBase {
 	status: CustomerAccountStatus;
     email: string;
@@ -24,7 +31,7 @@ export interface ICustomer extends IBase {
 }
 
 export interface IMerchant extends IBase {
-	status: CustomerAccountStatus;
+	status: MerchantAccountStatus;
     email: string;
     fullName: string;
     phoneNumber: string;

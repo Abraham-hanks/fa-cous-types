@@ -48,6 +48,7 @@ __export(src_exports, {
   ListStoreAttributesEndpoint: () => ListStoreAttributesEndpoint,
   LoginEndpoint: () => LoginEndpoint,
   LoginErrors: () => LoginErrors,
+  MerchantAccountStatus: () => MerchantAccountStatus,
   OtpContext: () => OtpContext,
   OtpVerificationErrors: () => OtpVerificationErrors,
   ProductStatus: () => ProductStatus,
@@ -136,6 +137,13 @@ var CustomerAccountStatus = /* @__PURE__ */ ((CustomerAccountStatus2) => {
   CustomerAccountStatus2["Active"] = "active";
   return CustomerAccountStatus2;
 })(CustomerAccountStatus || {});
+var MerchantAccountStatus = /* @__PURE__ */ ((MerchantAccountStatus2) => {
+  MerchantAccountStatus2["EmailReserved"] = "email-reserved";
+  MerchantAccountStatus2["Inactive"] = "inactive";
+  MerchantAccountStatus2["Deactivated"] = "deactivated";
+  MerchantAccountStatus2["Active"] = "active";
+  return MerchantAccountStatus2;
+})(MerchantAccountStatus || {});
 
 // src/types/customers/endpoint-payloads/login.payloads.ts
 var import_axios2 = require("axios");
@@ -413,6 +421,7 @@ var ProductStatus = /* @__PURE__ */ ((ProductStatus2) => {
   ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
+  MerchantAccountStatus,
   OtpContext,
   OtpVerificationErrors,
   ProductStatus,

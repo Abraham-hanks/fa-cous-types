@@ -84,6 +84,13 @@ var CustomerAccountStatus = /* @__PURE__ */ ((CustomerAccountStatus2) => {
   CustomerAccountStatus2["Active"] = "active";
   return CustomerAccountStatus2;
 })(CustomerAccountStatus || {});
+var MerchantAccountStatus = /* @__PURE__ */ ((MerchantAccountStatus2) => {
+  MerchantAccountStatus2["EmailReserved"] = "email-reserved";
+  MerchantAccountStatus2["Inactive"] = "inactive";
+  MerchantAccountStatus2["Deactivated"] = "deactivated";
+  MerchantAccountStatus2["Active"] = "active";
+  return MerchantAccountStatus2;
+})(MerchantAccountStatus || {});
 
 // src/types/customers/endpoint-payloads/login.payloads.ts
 import { HttpStatusCode as HttpStatusCode2 } from "axios";
@@ -360,6 +367,7 @@ export {
   ListStoreAttributesEndpoint,
   LoginEndpoint,
   LoginErrors,
+  MerchantAccountStatus,
   OtpContext,
   OtpVerificationErrors,
   ProductStatus,
