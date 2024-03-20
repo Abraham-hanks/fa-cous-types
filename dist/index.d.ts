@@ -299,11 +299,11 @@ declare const PublishStoreEndpoint: Endpoint;
 declare const SuggestStoreSubdomainsEndpoint: Endpoint;
 
 interface IFetchProfileResponse {
-    customer: ICustomer;
+    customer: IMerchant;
     stores: Array<IStore>;
 }
 declare const FetchProfileErrors: {
-    invalidCustomer: BazeError;
+    invalidMerchant: BazeError;
 };
 declare const ProfileEndpoint: Endpoint;
 
@@ -314,13 +314,13 @@ interface IReserveEmailPayload {
     fullName: string;
 }
 interface IReserveEmailResponse {
-    customer: ICustomer;
+    merchant: IMerchant;
     token: string;
 }
 type PhoneOrEmail = 'phone' | 'email';
 declare const ReserveEmailErrors: {
     compromisedPassword: (changeDate: Date) => BazeError;
-    duplicateCustomerDetected: (d: PhoneOrEmail) => BazeError;
+    duplicateMerchantDetected: (d: PhoneOrEmail) => BazeError;
     invalidPhoneNumber: BazeError;
     couldNotSendOtp: BazeError;
 };

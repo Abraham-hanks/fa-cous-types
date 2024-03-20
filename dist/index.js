@@ -115,19 +115,19 @@ var LoginErrors = {
 };
 var LoginEndpoint = {
   path: "/auth",
-  fullPath: "/customers/auth",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth",
+  parentModule: "/merchants",
   method: "PATCH" /* Patch */
 };
 
 // src/types/customers/endpoint-payloads/fetch-profile.payloads.ts
 import { HttpStatusCode as HttpStatusCode3 } from "axios";
 var FetchProfileErrors = {
-  invalidCustomer: {
+  invalidMerchant: {
     statusCode: HttpStatusCode3.BadRequest,
-    code: "INVALID_CUSTOMER",
+    code: "INVALID_MERCHANT",
     data: null,
-    message: `Invalid customer requested`,
+    message: `Invalid merchant requested`,
     recommendedActions: [
       `Contact support`
     ]
@@ -135,8 +135,8 @@ var FetchProfileErrors = {
 };
 var ProfileEndpoint = {
   path: "/profile",
-  fullPath: "/customers/profile",
-  parentModule: "/customers",
+  fullPath: "/merchants/profile",
+  parentModule: "/merchants",
   method: "PATCH" /* Patch */
 };
 
@@ -151,10 +151,10 @@ var ReserveEmailErrors = {
       `Ensure you're providing a proper mobile number`
     ]
   },
-  duplicateCustomerDetected: (d) => {
+  duplicateMerchantDetected: (d) => {
     return {
       statusCode: HttpStatusCode4.BadRequest,
-      code: "DUPLICATE_CUSTOMER_DETECTED",
+      code: "DUPLICATE_MERCHANT_DETECTED",
       message: `The ${d} you provided is already taken please provide another one or retrieve your account`,
       recommendedActions: [
         `Confirm that your ${d} is correct`,
@@ -185,16 +185,16 @@ var ReserveEmailErrors = {
 };
 var ReserveEmailEndpoint = {
   path: "",
-  fullPath: "/customers",
-  parentModule: "/customers",
+  fullPath: "/merchants",
+  parentModule: "/merchants",
   method: "POST" /* Post */
 };
 
 // src/types/customers/endpoint-payloads/get-access-token.payloads.ts
 var GetAccessTokenEndpoint = {
   path: "/auth/token",
-  fullPath: "/customers/auth/token",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth/token",
+  parentModule: "/merchants",
   method: "GET" /* Get */
 };
 
@@ -221,14 +221,14 @@ var ResetPasswordErrors = {
 };
 var ResetPasswordEndpoint = {
   path: "/auth/passwords",
-  fullPath: "/customers/auth/passwords",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth/passwords",
+  parentModule: "/merchants",
   method: "PATCH" /* Patch */
 };
 var ForgotPasswordEndpoint = {
   path: "/auth/passwords",
-  fullPath: "/customers/auth/passwords",
-  parentModule: "/customers",
+  fullPath: "/merchants/auth/passwords",
+  parentModule: "/merchants",
   method: "POST" /* Post */
 };
 
