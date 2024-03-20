@@ -274,10 +274,10 @@ var CreateStoreEndpoint = {
 // src/types/stores/endpoint-payloads/product.payloads.ts
 import { HttpStatusCode as HttpStatusCode7 } from "axios";
 var CreateProductErrors = {
-  noSuchStoreForCustomer: {
+  noSuchStoreForMerchant: {
     statusCode: HttpStatusCode7.BadRequest,
-    code: "NO_SUCH_STORE_FOR_CUSTOMER",
-    message: "This store does not exist for this customer"
+    code: "NO_SUCH_STORE_FOR_MERCHANT",
+    message: "This store does not exist for this merchant"
   }
 };
 var UpdateProductErrors = __spreadProps(__spreadValues({}, CreateProductErrors), {

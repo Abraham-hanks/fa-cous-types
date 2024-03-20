@@ -327,10 +327,10 @@ var CreateStoreEndpoint = {
 // src/types/stores/endpoint-payloads/product.payloads.ts
 var import_axios7 = require("axios");
 var CreateProductErrors = {
-  noSuchStoreForCustomer: {
+  noSuchStoreForMerchant: {
     statusCode: import_axios7.HttpStatusCode.BadRequest,
-    code: "NO_SUCH_STORE_FOR_CUSTOMER",
-    message: "This store does not exist for this customer"
+    code: "NO_SUCH_STORE_FOR_MERCHANT",
+    message: "This store does not exist for this merchant"
   }
 };
 var UpdateProductErrors = __spreadProps(__spreadValues({}, CreateProductErrors), {

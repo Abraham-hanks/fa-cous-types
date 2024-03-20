@@ -243,10 +243,10 @@ interface IListStoreAttributesResponse {
 declare const ListStoreAttributesEndpoint: Endpoint;
 
 declare const CreateProductErrors: {
-    noSuchStoreForCustomer: BazeError;
+    noSuchStoreForMerchant: BazeError;
 };
 declare const UpdateProductErrors: {
-    noSuchStoreForCustomer: BazeError;
+    noSuchStoreForMerchant: BazeError;
     noSuchProductInStore: BazeError;
 };
 interface ICreateProductPayload {
