@@ -147,7 +147,7 @@ interface IStoreConfig extends IBase {
     rawChoices?: Array<unknown>;
 }
 interface IStore extends IBase {
-    customerId: string;
+    merchantId: string;
     name: string;
     isLive: boolean;
     contactEmails: Array<string>;
