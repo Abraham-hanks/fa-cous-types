@@ -299,7 +299,7 @@ declare const PublishStoreEndpoint: Endpoint;
 declare const SuggestStoreSubdomainsEndpoint: Endpoint;
 
 interface IFetchProfileResponse {
-    customer: IMerchant;
+    merchant: IMerchant;
     stores: Array<IStore>;
 }
 declare const FetchProfileErrors: {
